@@ -1,0 +1,80 @@
+// Import the Scanner class.
+import java.util.Scanner;
+
+// Set the Project Name to ArcadeScoreBoard.
+public class ArcadeScoreBoard {
+    public static void main(String[] args) {
+        // Declare and initialize the following in the main() method:
+        Scanner input = new Scanner(System.in);
+        String playerName = " ";
+        String more = " ";
+        int game = 0;
+        int sum = 0;
+        int highest = 0;
+        int[] scores = new int[5];
+        
+        // Greetings
+        System.out.println("Welcome to the Campus Arcade!");
+        
+        // Choosing a game
+        System.out.println("Choose your game:");
+        System.out.println("1 - Pixel Dash");
+        System.out.println("2 - Robo Runner");
+        System.out.println("3 - Galaxy Pong ");
+        System.out.print("Enter game (1-3):");
+        game = input.nextInt();
+        
+        // Asking for name
+        System.out.print("Enter your name:");
+        playerName = input.next();
+        
+        // Allow the user to select among the games by entering 1, 2, or 3. 
+        switch (game) {
+            case 1:
+                System.out.println("You selected Pixel Dash," + playerName + "!\n");
+                break;
+            case 2:
+                System.out.println("You selectedRobo Runner," + playerName + "!\n");
+                break;
+            case 3:
+                System.out.println("You selected Galaxy Pong," + playerName + "!\n");
+                break;
+            default:
+                System.out.println("Invalid");
+        }
+        
+        // Prompt the user to enter five (5) round scores for the chosen game. Use a for loop to store each score in the scores array while also computing the total (sum).
+        System.out.println("Enter 5 round scores:");
+        for (int i = 0; i < scores.length; i++) {
+            System.out.print("Round " + (i + 1) + ": ");
+            scores[i] = input.nextInt();
+            sum += scores[i];
+        }
+        
+        // For space
+        System.out.println();
+        
+        // After input, calculate the average score using the total (sum)
+        double average = (double) sum / scores.length;
+
+        // Use another for loop to determine the highest score.
+        highest = scores[0];
+        for (int i = 1; i < scores.length; i++) {
+            if (scores[i] > highest) {
+                highest = scores[i];
+            }
+        }
+        // Results
+        System.out.println("Total Score: " + sum);
+        System.out.println("Average Score: " + average);
+        System.out.println("Highest Score: " + highest + "\n");
+        
+        // Use an enhanced for loop to display all scores in one line separated by spaces.
+        System.out.println("\nAll Scores:");
+            for (int score : scores) {
+              System.out.print(score + " ");
+            }
+
+        input.close();
+    }
+}

@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+class Coffee {
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int v) {
+        this.volume = v;
+    }
+
+    private int volume;
+
+}
+class ConsoleApp {
+    static void addCreams(int creams){
+        creams = creams + 1;
+    }
+
+    static void refillCup(Coffee cup){
+        cup.setVolume(cup.getVolume() + 100);
+    }
+    public static void main(String[] args){
+        Coffee myCup = new Coffee();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of cream portions:");
+        int creams = scanner.nextInt();
+        addCreams(creams);
+        System.out.printf("Your drink still has %d cream portions %n", creams);
+        System.out.println();
+        System.out.print("Enter starting cup size(ml):");
+        int startVol = scanner.nextInt();
+        myCup.setVolume(startVol);
+        refillCup(myCup);
+        System.out.printf("Your cup size increased to %d ml", myCup.getVolume());
+        scanner.close();
+    }
+}

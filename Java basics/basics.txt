@@ -1,0 +1,174 @@
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        // This is a single-line comment
+        /* This is a 
+          multi-line comment */
+        /** This is a documentation comment*/
+
+        //math operators
+        System.out.println("Math Operators:");
+        int sum = 5 + 3;
+        int difference = 5 - 3;
+        int product = 5 * 3;
+        int quotient = 5 / 3;
+        int remainder = 5 % 3;
+        System.out.println("Sum: " + sum);
+        System.out.println("Difference: " + difference);
+        System.out.println("Product: " + product);
+        System.out.println("Quotient: " + quotient);
+        System.out.println("Remainder: " + remainder);
+
+        System.out.println("\nIncrement and Decrement Operators:");
+        //increment
+        int a = 5;
+        a++;
+        System.out.println("Incremented value: " + a);
+        //decrement
+        a--;
+        System.out.println("Decremented value: " + a);
+
+        System.out.println("\nPrefix and Postfix:");
+        //prefix
+        int b = 10;
+        ++b;
+        System.out.println("Prefix value: " + b);
+        //postfix
+        int c = 15;
+        c--;
+        System.out.println("Postfix value: " + c);
+
+        System.out.println("\nAssignment Operators:");
+        //addition and assignment 
+        int d = 20;
+        d += 5;
+        System.out.println("Addition: " + d);
+        //subtraction and assignment
+        d -= 3;     
+        System.out.println("Subtraction: " + d);
+
+        System.out.println("Concatenation and User Input:");
+        //String concatenation
+        String str = "Hello";
+        System.out.println("String concatenation: " + str);
+        //getting user input
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+        scanner.close();
+
+        //conditional statements
+        System.out.println("\nConditional Statements:");
+        //if statement
+
+        int num = 10;
+        if (num > 5) {
+            System.out.println(num + " is greater than 5");
+        }
+        System.out.println("\nif-else statement");
+        //if-else statement
+        if (num % 2 == 0) {
+            System.out.println(num + " is even");
+        } else {
+            System.out.println(num + " is odd");
+        }
+
+        System.out.println("\nelse-if statement");
+        //else-if 
+        if (num < 0) {
+            System.out.println(num + " is negative");
+        } else if (num == 0) {
+            System.out.println(num + " is zero");
+        } else {
+            System.out.println(num + " is positive");
+        }
+
+        System.out.println("\nNested if statement");
+        //nested if
+        int age = 25;
+        if (age > 0) {
+            if (age >= 18) {
+                System.out.println("Welcome");
+            } else {
+                System.out.println("You're not allowed");
+            }
+        } else {
+            System.out.println("You are a baby");
+        }
+
+        System.out.println("\nSwitch Statement:");
+        //switch statement
+        int day = 4;
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid day");
+        }
+
+        System.out.println("Logical Operators");
+        //logical operators
+        int x = 10;
+        int y = 20;
+        //Using && 
+        if (x < 15 && y > 15) {
+            System.out.println("Both conditions are true");
+        }
+        //Using ||
+        if (x < 5 || y > 15) {
+            System.out.println("At least one condition is true");
+        }
+        //Using !
+        if (!(x < 5)) {
+            System.out.println("x is not less than 5");
+        }
+        
+        System.out.println("\nWhile loops:");
+        //while loop
+        int count = 0;
+        while (count < 5) {
+            System.out.println("Count: " + count);
+            count++;
+        }
+        
+        System.out.println("\nDo-While loop:");
+        //do-while loop
+        int doCount = 0;
+        do {
+            System.out.println("Do Count: " + doCount);
+            doCount++;
+        } while (doCount < 5);
+        
+        System.out.println("\nFor loops:");
+        //for loop
+        for (int i = 0; i < 5; i++) {
+            System.out.println("For Loop Count: " + i);
+        }
+        
+
+
+        
+    }
+}

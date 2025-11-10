@@ -1,0 +1,78 @@
+/*
+    2. Click File > New Project > Java Application.
+    3. Set the Project Name to TourBooking.
+    4. Insert comments at the top of your file.
+*/
+
+// 5. Import the Scanner class.
+import java.util.Scanner;
+
+public class Tourbooking {
+    public static void main(String[] args) {
+
+        // 6. Declare and initialize the following in the main() method:
+        Scanner input = new Scanner(System.in);
+        int age = 0;
+        int city = 0;
+        int fanCount = 0;
+        String more = "";
+        String artistName;
+
+        // 7. Use your favorite artist in the artistName.
+        artistName = "Rylie";
+
+        // 8. Write a welcome statement to greet the user. Mention the artist name using the variable.
+        System.out.println("Welcome to " + artistName + "'s tour!");
+
+        // 9. Write statements asking the user to select a city for the tour. Come up with three cities and display them.
+        System.out.println("List of Cities for the Tour:");
+        System.out.println("[1] Manila ");
+        System.out.println("[2] Quezon City ");
+        System.out.println("[3] Makati");
+        System.out.print("Select a city for the tour: ");
+
+        // 10. Allow the user to select among the cities by entering 1, 2, or 3. See some sample codes below:
+        city = input.nextInt();
+
+        switch (city) {
+            case 1:
+                System.out.println("You selected Manila");
+                break;
+            case 2:
+                System.out.println("You selected Quezon City");
+                break;
+            case 3:
+                System.out.println("You selected Makati");
+                break;
+            default:
+                System.out.println("Please choose in 1,2,3,");
+        }
+
+        // Start do-while loop for fan registration
+        // 13. Offer additional registration by using a do-while loop. Open the loop block by inserting do before asking for the fan's age.
+        do {
+            // 11. Display the message "Enter fan's age: "
+            System.out.print("\nEnter Fan's age: ");
+            age = input.nextInt();
+            input.nextLine();
+
+            // 12. If the user's age is 18 and above, print a message saying that the user is eligible to attend the tour. Otherwise, print a sorry statement.
+            if (age >= 18) {
+                System.out.println("The user is eligible to attend the tour!");
+                fanCount++;
+            } else {
+                System.out.println("Sorry, the user is not eligible to attend the tour.");
+            }
+
+            // 14. Continue the code by writing a statement asking if the user wants to register another person.
+            System.out.print("Do you want to register another user?Yes or No?: ");
+
+            // 15. Accept the answer using more = input.nextLine().
+            more = input.nextLine();
+
+            // 16. Write this line to check the user's answer and complete your loop block: while(more.equalsIgnoreCase("yes"));
+        } while (more.equalsIgnoreCase("yes"));
+
+        System.out.println("\nTotal fans registered: " + fanCount);
+    }
+}
